@@ -1,22 +1,55 @@
 public class OOPSBannerApp {
-    public static void main(String[] args) {
-        // UC4: Refactoring to use Arrays and Loops for better modularity
-        
-        // Step 1: Store all the banner lines in a String Array
-        // We use String.join inside the array for maximum efficiency
-        String[] bannerLines = {
-            String.join("", "  *** ", "   ", "  *** ", "   ", " **** ", "   ", "  **** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ** ", "   ", " ** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ** ", "   ", " ** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " **** ", "   ", "  *** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     ** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     ** "),
-            String.join("", "  *** ", "   ", "  *** ", "   ", " ** ", "   ", " **** ")
-        };
 
-        // Step 2: Use an Enhanced For-Loop to iterate and print
-        for (String line : bannerLines) {
-            System.out.println(line);
+    // Method to generate the pattern for the letter 'O'
+    public static String[] getOPattern() {
+        return new String[] {
+            "  *** ",
+            " ** ** ",
+            " ** ** ",
+            " ** ** ",
+            " ** ** ",
+            " ** ** ",
+            "  *** "
+        };
+    }
+
+    // Method to generate the pattern for the letter 'P'
+    public static String[] getPPattern() {
+        return new String[] {
+            " **** ",
+            " ** ** ",
+            " ** ** ",
+            " **** ",
+            " ** ",
+            " ** ",
+            " ** "
+        };
+    }
+
+    // Method to generate the pattern for the letter 'S'
+    public static String[] getSPattern() {
+        return new String[] {
+            "  **** ",
+            " ** ",
+            " ** ",
+            "  *** ",
+            "     **",
+            "     **",
+            " **** "
+        };
+    }
+
+    public static void main(String[] args) {
+        // UC6: Refactor Banner Logic into Functions
+        
+        // Declare String Arrays to hold patterns for each letter
+        String[] oPattern = getOPattern();
+        String[] pPattern = getPPattern();
+        String[] sPattern = getSPattern();
+
+        // Use a loop to assemble and print each line of the banner
+        for (int i = 0; i < oPattern.length; i++) {
+            System.out.println(oPattern[i] + "   " + oPattern[i] + "   " + pPattern[i] + "   " + sPattern[i]);
         }
     }
 }
