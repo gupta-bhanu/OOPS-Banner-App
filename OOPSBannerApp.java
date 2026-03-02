@@ -1,21 +1,20 @@
 public class OOPSBannerApp {
     public static void main(String[] args) {
-        // UC4: Refactoring to use Arrays and Loops for better modularity
+        // UC5: Render OOPS as Banner using Inline Array Initialization
         
-        // Step 1: Store all the banner lines in a String Array
-        // We use String.join inside the array for maximum efficiency
-        String[] bannerLines = {
+        // Combine array declaration, initialization, and population in a single statement
+        String[] lines = {
             String.join("", "  *** ", "   ", "  *** ", "   ", " **** ", "   ", "  **** "),
             String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ** ", "   ", " ** "),
             String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ** ", "   ", " ** "),
             String.join("", " ** ** ", "   ", " ** ** ", "   ", " **** ", "   ", "  *** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     ** "),
-            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     ** "),
+            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     **"),
+            String.join("", " ** ** ", "   ", " ** ** ", "   ", " ** ", "   ", "     **"),
             String.join("", "  *** ", "   ", "  *** ", "   ", " ** ", "   ", " **** ")
         };
 
-        // Step 2: Use an Enhanced For-Loop to iterate and print
-        for (String line : bannerLines) {
+        // Use a for-each loop to iterate through the array and print each line
+        for (String line : lines) {
             System.out.println(line);
         }
     }
